@@ -145,6 +145,7 @@ make eval-baseline eval-poc compare TRACK=tXX      # cần overlay giảng viên
 
 - `fixtures/`: **synthetic**, CC0, không có người/biển số thật; dữ liệu input đã commit sẵn.
   Mỗi track có `manifest.csv` (input) kèm sha256. Kiểm tra: `make verify`.
+  `.gitattributes` giữ nguyên byte của fixture trên Windows vì manifest kiểm SHA-256 trực tiếp trên file.
   Ground truth (`gt/`) và generator không phát cho học viên; `pytest` tự skip các test cần GT.
 - `data/real/` (gitignored, tuỳ chọn): mẫu nhỏ dữ liệu thật từ Hugging Face (BDD100K val, COCO val2017, license plates).
   Giảng viên chuẩn bị trước lớp bằng `make real-data` — xem `docs/INSTRUCTOR_SETUP.md`.
